@@ -2,24 +2,37 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Home - Blog</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <title>Kelompok 2</title>
+    </head>
 <body>
+
   <header>
-    <h1>Blog Kreatif</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="artikel.html">Artikel</a>
-      <a href="contact.html">Contact Us</a>
+    <div class="logo">
+      <h1>Blog 2</h1>
+      <p class="tagline">Cerita, artikel, dan tips kreatif setiap hari</p>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html" class="nav-button">Home</a>
+      <a href="contact.html" class="nav-button">Contact Us</a>
     </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Cari artikel...">
+      <button onclick="searchArticles()">Cari</button>
+    </div>
   </header>
 
-  <main>
-    <h2>Selamat datang!</h2>
-    <p>Ini adalah halaman utama blog.</p>
-  </main>
+  <div class="container">
+    <h2>Artikel</h2>
+    <div id="articlesList">
+      <!-- Artikel akan muncul di sini -->
+    </div>
+  </div>
 
-  <script src="script.js"></script>
+  <footer>
+    &copy; 2025 Blog 2. Semua hak cipta dilindungi.
+  </footer>
 </body>
 </html>
