@@ -120,6 +120,7 @@ body {
       border-top-right-radius: 10px;
     }
   .Green {
- color:Green;
-font-family:Georgia;
+  color: green;
+  font-weight: bold;
+  padding: 10px;
 }
