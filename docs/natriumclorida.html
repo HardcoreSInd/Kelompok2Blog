@@ -2,156 +2,657 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Natrium Clorida - Fakta Kimia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natrium Klorida (NaCl) - Garam Dapur</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: linear-gradient(135deg, #f0f0f0, #dfe9f3);
-      color: #333;
-      padding: 20px;
+    :root {
+      --primary: #4a89dc;
+      --secondary: #5d9cec;
+      --accent: #ff7e5f;
+      --light: #f5f7fa;
+      --dark: #333;
+      --na-color: #ff6b6b;
+      --cl-color: #4ecdc4;
+      --nacl-color: #45b7d1;
     }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Styles */
     header {
-      text-align: center;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
       padding: 20px;
-      background: linear-gradient(90deg, #ff7e5f, #feb47b);
+      text-align: center;
       color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .logo i {
+      margin-right: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav li {
+      margin-left: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .header-content {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.5em;
+      margin: 20px 0 10px;
+      font-size: 3rem;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
+    header p {
+      margin: 10px 0;
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Main Content */
     main {
+      flex: 1;
+      max-width: 1200px;
       margin: 30px auto;
-      max-width: 900px;
-      padding: 20px;
-      background: rgba(255,255,255,0.95);
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 0 20px;
     }
 
-    h2 {
-      color: #ff7e5f;
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .card h2 {
+      color: var(--primary);
       margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--light);
     }
 
-    p {
-      margin-bottom: 15px;
+    .card h3 {
+      color: var(--accent);
+      margin: 15px 0 10px;
     }
 
-    .danger {
-      color: red;
-      font-weight: bold;
+    .card ul {
+      padding-left: 20px;
+      margin: 10px 0;
     }
 
-    .unique {
-      color: green;
-      font-weight: bold;
+    .card li {
+      margin-bottom: 8px;
     }
 
-    /* Animasi */
-    .reaction-box {
-      margin: 30px auto;
+    /* Reaction Section */
+    .reaction {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
       text-align: center;
+      margin: 40px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .reaction h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .reaction-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 30px 0;
     }
 
     .atom {
-      display: inline-block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 20px;
+    }
+
+    .atom-circle {
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      line-height: 80px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.5rem;
       color: white;
-      font-weight: bold;
-      margin: 20px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      position: relative;
     }
 
-    .atom:hover {
-      transform: scale(1.2);
+    .atom-circle.na {
+      background: var(--na-color);
     }
 
-    .na {
-      background: #007bff;
+    .atom-circle.cl {
+      background: var(--cl-color);
     }
 
-    .cl {
-      background: #28a745;
-    }
-
-    .salt {
+    .atom-circle.nacl {
+      background: var(--nacl-color);
       display: none;
-      margin-top: 20px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #333;
-      animation: fadeIn 2s forwards;
+    }
+
+    .atom-label {
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .reaction-arrow {
+      font-size: 2rem;
+      margin: 0 15px;
+      color: var(--accent);
+    }
+
+    .reaction-button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .reaction-button:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    /* Table Styles */
+    .property-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    .property-table th, .property-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .property-table th {
+      background-color: var(--light);
+      color: var(--dark);
+    }
+
+    .property-table tr:hover {
+      background-color: rgba(74, 137, 220, 0.05);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(90deg, var(--dark), #444);
+      color: white;
+      margin-top: 40px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-links {
+      margin: 15px 0;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--secondary);
+    }
+
+    /* Animations */
+    @keyframes moveTogether {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(var(--target-position) - 50px)); }
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.5);}
-      to { opacity: 1; transform: scale(1);}
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    .back-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 20px;
-      text-decoration: none;
-      background: #ff7e5f;
+    .show {
+      display: flex !important;
+      animation: fadeIn 1s forwards;
+    }
+
+    .electron {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: gold;
+      border-radius: 50%;
+      top: -5px;
+      right: -5px;
+      box-shadow: 0 0 8px gold;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 100%;
+      margin: 30px 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: var(--light);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      border-radius: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 10px 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+
+    .timeline-date {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    /* Crystal Structure */
+    .crystal-structure {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .crystal {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      transform-style: preserve-3d;
+      transform: rotateX(60deg) rotateZ(45deg);
+    }
+
+    .ion {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: white;
-      border-radius: 8px;
-      transition: 0.3s;
+      font-weight: bold;
+      font-size: 0.8rem;
     }
 
-    .back-btn:hover {
-      background: #feb47b;
+    .ion.na {
+      background: var(--na-color);
+    }
+
+    .ion.cl {
+      background: var(--cl-color);
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Natrium Clorida (NaCl)</h1>
-    <p>Bagaimana dua zat berbahaya bersatu jadi sesuatu yang bermanfaat</p>
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-atom"></i>
+        <span>ChemBlog</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+          <li><a href="artikel.html"><i class="fas fa-book"></i> Artikel</a></li>
+          <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="header-content">
+      <h1>Natrium Klorida (NaCl)</h1>
+      <p>Dari Duo Berbahaya Menjadi Garam Dapur yang Menyehatkan</p>
+    </div>
   </header>
 
   <main>
-    <h2>Pengenalan</h2>
-    <p><span class="danger">Natrium (Na)</span> adalah logam yang sangat reaktif dan bisa meledak bila kena air.</p>
-    <p><span class="danger">Klorin (Cl)</span> adalah gas beracun berwarna hijau kekuningan yang berbahaya jika dihirup.</p>
-    <p>Tapi saat kedua unsur ini bereaksi, mereka membentuk <span class="unique">Natrium Klorida (NaCl)</span>, yang kita kenal sehari-hari sebagai garam dapur!</p>
-
-    <h2>Sifat Unik</h2>
-    <ul>
-      <li>Menjadi mineral penting untuk keseimbangan cairan tubuh.</li>
-      <li>Digunakan sebagai pengawet makanan alami.</li>
-      <li>Dapat menghantarkan listrik jika dilarutkan dalam air.</li>
-    </ul>
-
-    <div class="reaction-box">
-      <h2>Simulasi Reaksi</h2>
-      <div class="atom na" onclick="combine()">Na</div>
-      <div class="atom cl" onclick="combine()">Cl</div>
-      <div id="salt" class="salt">✨ NaCl Terbentuk: Garam Dapur! ✨</div>
+    <div class="content-grid">
+      <div class="card">
+        <h2>Apa Itu Natrium Klorida?</h2>
+        <p>Natrium klorida (NaCl), lebih dikenal sebagai garam dapur, adalah senyawa ionik yang terdiri dari unsur natrium (Na) dan klorin (Cl). Senyawa ini merupakan komponen utama dalam garam yang dikonsumsi sehari-hari dan memiliki peran vital dalam berbagai proses biologis.</p>
+        
+        <h3>Sejarah Singkat</h3>
+        <p>Garam telah menjadi komoditas berharga sejak zaman kuno. Peradaban Romawi bahkan membayar para prajurit mereka dengan garam (asal kata "salary"). Sepanjang sejarah, garam digunakan sebagai pengawet makanan dan mata uang pertukaran.</p>
+      </div>
+      
+      <div class="card">
+        <h2>Sifat Fisik dan Kimia</h2>
+        
+        <table class="property-table">
+          <tr>
+            <th>Sifat</th>
+            <th>Nilai</th>
+          </tr>
+          <tr>
+            <td>Rumus Kimia</td>
+            <td>NaCl</td>
+          </tr>
+          <tr>
+            <td>Massa Molar</td>
+            <td>58,44 g/mol</td>
+          </tr>
+          <tr>
+            <td>Penampilan</td>
+            <td>Kristal padat putih</td>
+          </tr>
+          <tr>
+            <td>Titik Leleh</td>
+            <td>801 °C</td>
+          </tr>
+          <tr>
+            <td>Titik Didih</td>
+            <td>1413 °C</td>
+          </tr>
+          <tr>
+            <td>Kelarutan dalam Air</td>
+            <td>359 g/L (pada 20°C)</td>
+          </tr>
+        </table>
+      </div>
     </div>
 
-    <a href="index.html" class="back-btn">⬅ Kembali</a>
+    <div class="content-grid">
+      <div class="card">
+        <h2>Pembentukan NaCl</h2>
+        <p>Natrium klorida terbentuk melalui reaksi kimia antara unsur natrium dan klorin. Kedua unsur ini sangat reaktif dan berbahaya dalam bentuk murninya:</p>
+        
+        <h3>Natrium (Na)</h3>
+        <p>Logam alkali yang sangat reaktif. Dalam keadaan murni, natrium adalah logam lunak keperakan yang bereaksi keras dengan air, menghasilkan hidrogen yang dapat meledak.</p>
+        
+        <h3>Klorin (Cl₂)</h3>
+        <p>Gas beracun berwarna hijau kekuningan yang bersifat korosif dan dapat mematikan jika terhirup. Digunakan sebagai senjata kimia selama Perang Dunia I.</p>
+        
+        <h3>Proses Ikatan Ionik</h3>
+        <p>Natrium melepaskan satu elektron dari kulit terluarnya, membentuk ion Na⁺. Klorin menerima elektron tersebut, membentuk ion Cl⁻. Daya tarik elektrostatis antara ion-ion yang berlawanan muatan ini menciptakan ikatan ionik yang kuat, menghasilkan senyawa NaCl yang stabil.</p>
+      </div>
+      
+      <div class="card">
+        <h2>Struktur Kristal</h2>
+        <p>NaCl membentuk struktur kristal kubus berpusat muka (face-centered cubic), di mana setiap ion natrium dikelilingi oleh enam ion klorida, dan sebaliknya.</p>
+        
+        <div class="crystal-structure">
+          <div class="crystal">
+            <div class="ion na" style="top: 50px; left: 50px;">Na⁺</div>
+            <div class="ion cl" style="top: 50px; left: 100px;">Cl⁻</div>
+            <div class="ion na" style="top: 100px; left: 50px;">Na⁺</div>
+            <div class="ion cl" style="top: 100px; left: 100px;">Cl⁻</div>
+            <div class="ion na" style="top: 75px; left: 75px;">Na⁺</div>
+            <div class="ion cl" style="top: 75px; left: 125px;">Cl⁻</div>
+          </div>
+        </div>
+        
+        <p>Struktur ini sangat stabil dan menjelaskan mengapa NaCl memiliki titik leleh yang tinggi dan membentuk kristal kubus yang sempurna.</p>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <div class="card">
+        <h2>Kegunaan Natrium Klorida</h2>
+        <ul>
+          <li><strong>Bahan Pangan:</strong> Bumbu masak dan pengawet makanan</li>
+          <li><strong>Kesehatan:</strong> Membantu menjaga keseimbangan cairan tubuh dan fungsi saraf</li>
+          <li><strong>Industri:</strong> Bahan baku produksi soda api, klorin, dan hidrogen</li>
+          <li><strong>Pertanian:</strong> Pupuk dan pakan ternak</li>
+          <li><strong>Transportasi:</strong> Pencair es di jalan raya selama musim dingin</li>
+          <li><strong>Pengolahan Air:</strong> Regenerasi resin penukar ion pada proses pelunakan air</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h2>Efek Kesehatan</h2>
+        <p>Meskipun essential untuk kesehatan, konsumsi berlebihan NaCl dapat menyebabkan:</p>
+        <ul>
+          <li>Hipertensi (tekanan darah tinggi)</li>
+          <li>Peningkatan risiko penyakit kardiovaskular</li>
+          <li>Retensi cairan dalam tubuh</li>
+          <li>Gangguan fungsi ginjal</li>
+        </ul>
+        <p>Organisasi Kesehatan Dunia (WHO) merekomendasikan konsumsi kurang dari 5 gram garam per hari untuk orang dewasa.</p>
+      </div>
+    </div>
+
+    <div class="reaction">
+      <h2><i class="fas fa-flask"></i> Simulasi Reaksi Pembentukan NaCl</h2>
+      <p>Klik tombol di bawah untuk melihat bagaimana natrium dan klorin bereaksi membentuk natrium klorida:</p>
+      
+      <div class="reaction-container">
+        <div class="atom">
+          <div class="atom-circle na">
+            Na
+            <div class="electron"></div>
+          </div>
+          <div class="atom-label">Natrium (Logam Reaktif)</div>
+        </div>
+        
+        <div class="reaction-arrow">+</div>
+        
+        <div class="atom">
+          <div class="atom-circle cl">
+            Cl
+          </div>
+          <div class="atom-label">Klorin (Gas Beracun)</div>
+        </div>
+        
+        <div class="reaction-arrow">→</div>
+        
+        <div class="atom">
+          <div class="atom-circle nacl">
+            NaCl
+          </div>
+          <div class="atom-label">Natrium Klorida (Garam Dapur)</div>
+        </div>
+      </div>
+      
+      <button class="reaction-button" onclick="startReaction()">
+        <i class="fas fa-play"></i> Mulai Reaksi
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Fakta Menarik tentang Garam</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Zaman Kuno</div>
+          <p>Garam digunakan sebagai metode pembayaran (asal kata "salary" dalam bahasa Inggris)</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Abad Pertengahan</div>
+          <p>Garam menjadi komoditas berharga yang diperdagangkan sepanjang Jalur Garam di Eropa</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">1930</div>
+          <p>Garam beryodium pertama kali diperkenalkan untuk memerangi gondok</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Sekarang</div>
+          <p>Produksi garam global mencapai lebih dari 280 juta ton per tahun</p>
+        </div>
+      </div>
+    </div>
   </main>
 
+  <footer>
+    <div class="footer-content">
+      <p>Terima kasih telah membaca artikel tentang Natrium Klorida!</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p>&copy; 2025 ChemBlog. Semua hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
   <script>
-    function combine() {
-      document.getElementById("salt").style.display = "block";
+    function startReaction() {
+      const naElement = document.querySelector('.na');
+      const clElement = document.querySelector('.cl');
+      const naclElement = document.querySelector('.nacl');
+      const button = document.querySelector('.reaction-button');
+      
+      // Add animation class to elements
+      naElement.style.animation = 'moveTogether 2s forwards';
+      clElement.style.animation = 'moveTogether 2s forwards';
+      
+      // Show NaCl after animation completes
+      setTimeout(() => {
+        naElement.style.display = 'none';
+        clElement.style.display = 'none';
+        naclElement.classList.add('show');
+        
+        // Change button to reset
+        button.innerHTML = '<i class="fas fa-redo"></i> Ulangi Simulasi';
+        button.onclick = resetReaction;
+      }, 2000);
+    }
+    
+    function resetReaction() {
+      const naElement = document.querySelector('.na');
+      const clElement = document.querySelector('.cl');
+      const naclElement = document.querySelector('.nacl');
+      const button = document.querySelector('.reaction-button');
+      
+      // Reset elements
+      naElement.style.display = 'flex';
+      clElement.style.display = 'flex';
+      naclElement.classList.remove('show');
+      naElement.style.animation = '';
+      clElement.style.animation = '';
+      
+      // Change button back to start
+      button.innerHTML = '<i class="fas fa-play"></i> Mulai Reaksi';
+      button.onclick = startReaction;
     }
   </script>
+
 </body>
 </html>
