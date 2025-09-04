@@ -132,10 +132,3 @@ main {
   background-size: cover;
   padding: 40px 0;
 }
-.hero img {
-  width: 100%;
-  height: auto; 
-  display: block;
-  margin: 0 auto;
-  border-radius: 5px;
-}
