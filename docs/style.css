@@ -134,8 +134,8 @@ main {
 }
 .hero img {
   width: 100%;
-  height: auto; /* biar proporsional */
+  height: auto; 
   display: block;
   margin: 0 auto;
-  border-radius: 10px; /* opsional biar rapi */
+  border-radius: 10px;
 }
