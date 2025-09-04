@@ -2,24 +2,24 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Natrium Klorida (NaCl)</title>
+  <title>Natrium Clorida - Fakta Kimia</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-      color: #333;
       line-height: 1.6;
+      background: linear-gradient(135deg, #f0f0f0, #dfe9f3);
+      color: #333;
+      padding: 20px;
     }
 
     header {
-      background: linear-gradient(90deg, #ff7e5f, #feb47b);
-      padding: 20px;
       text-align: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b);
       color: white;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     header h1 {
@@ -28,159 +28,130 @@
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
-    header p {
-      margin: 5px 0 0;
-    }
-
     main {
-      max-width: 900px;
       margin: 30px auto;
+      max-width: 900px;
       padding: 20px;
-      background: white;
+      background: rgba(255,255,255,0.95);
       border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     h2 {
       color: #ff7e5f;
+      margin-bottom: 15px;
     }
 
-    .article {
-      margin-bottom: 20px;
+    p {
+      margin-bottom: 15px;
     }
 
-    .article h3 {
-      margin-bottom: 10px;
-      color: #444;
+    .danger {
+      color: red;
+      font-weight: bold;
     }
 
-    ul {
-      padding-left: 20px;
+    .unique {
+      color: green;
+      font-weight: bold;
     }
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #333;
-      color: white;
-      margin-top: 40px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-
-    /* --- Animasi --- */
-    .reaction {
-      margin-top: 30px;
+    /* Animasi */
+    .reaction-box {
+      margin: 30px auto;
       text-align: center;
     }
 
     .atom {
       display: inline-block;
-      margin: 10px;
-      padding: 20px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      font-weight: bold;
+      line-height: 80px;
+      text-align: center;
       color: white;
+      font-weight: bold;
+      margin: 20px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .atom:hover {
+      transform: scale(1.2);
     }
 
     .na {
-      background: #ff4d4d;
-      animation: moveNa 3s infinite alternate;
+      background: #007bff;
     }
 
     .cl {
-      background: #4da6ff;
-      animation: moveCl 3s infinite alternate;
+      background: #28a745;
     }
 
-    .nacl {
-      background: #33cc33;
+    .salt {
       display: none;
-      padding: 30px;
-    }
-
-    @keyframes moveNa {
-      from { transform: translateX(-50px); }
-      to { transform: translateX(50px); }
-    }
-
-    @keyframes moveCl {
-      from { transform: translateX(50px); }
-      to { transform: translateX(-50px); }
-    }
-
-    .show {
-      display: inline-block !important;
-      animation: fadeIn 1s forwards;
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      animation: fadeIn 2s forwards;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.5); }
-      to { opacity: 1; transform: scale(1); }
+      from { opacity: 0; transform: scale(0.5);}
+      to { opacity: 1; transform: scale(1);}
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      text-decoration: none;
+      background: #ff7e5f;
+      color: white;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #feb47b;
     }
   </style>
 </head>
 <body>
-
   <header>
-      <a href="artikel.html">Artikel</a>
-    <h1>Natrium Klorida (NaCl)</h1>
-    <p>Ketika dua zat berbahaya bersatu jadi garam dapur</p>
+    <h1>Natrium Clorida (NaCl)</h1>
+    <p>Bagaimana dua zat berbahaya bersatu jadi sesuatu yang bermanfaat</p>
   </header>
 
   <main>
-    <h2>Bagaimana Natrium Klorida Terbentuk?</h2>
-    <p>
-      Natrium klorida (NaCl) terbentuk dari <b>natrium (Na)</b> dan <b>klorin (Cl)</b>. 
-      Menariknya, keduanya sangat berbahaya jika berdiri sendiri:
-    </p>
+    <h2>Pengenalan</h2>
+    <p><span class="danger">Natrium (Na)</span> adalah logam yang sangat reaktif dan bisa meledak bila kena air.</p>
+    <p><span class="danger">Klorin (Cl)</span> adalah gas beracun berwarna hijau kekuningan yang berbahaya jika dihirup.</p>
+    <p>Tapi saat kedua unsur ini bereaksi, mereka membentuk <span class="unique">Natrium Klorida (NaCl)</span>, yang kita kenal sehari-hari sebagai garam dapur!</p>
 
-    <div class="article">
-      <h3>Natrium (Na)</h3>
-      <p>Logam alkali yang sangat reaktif. Jika kena air bisa meledak kecil karena menghasilkan hidrogen.</p>
+    <h2>Sifat Unik</h2>
+    <ul>
+      <li>Menjadi mineral penting untuk keseimbangan cairan tubuh.</li>
+      <li>Digunakan sebagai pengawet makanan alami.</li>
+      <li>Dapat menghantarkan listrik jika dilarutkan dalam air.</li>
+    </ul>
+
+    <div class="reaction-box">
+      <h2>Simulasi Reaksi</h2>
+      <div class="atom na" onclick="combine()">Na</div>
+      <div class="atom cl" onclick="combine()">Cl</div>
+      <div id="salt" class="salt">✨ NaCl Terbentuk: Garam Dapur! ✨</div>
     </div>
 
-    <div class="article">
-      <h3>Klorin (Cl<sub>2</sub>)</h3>
-      <p>Gas beracun berwarna hijau kekuningan, bisa mematikan bila terhirup.</p>
-    </div>
-
-    <div class="article">
-      <h3>Proses Bersatunya</h3>
-      <p>Natrium melepas 1 elektron, Klorin menerima elektron itu. Terbentuklah ikatan ionik menjadi garam dapur (NaCl).</p>
-    </div>
-
-    <div class="article">
-      <h3>Sifat Unik NaCl</h3>
-      <ul>
-        <li>Kristal putih padat</li>
-        <li>Rasanya asin</li>
-        <li>Tidak beracun lagi</li>
-        <li>Penting untuk kehidupan</li>
-      </ul>
-    </div>
-
-    <div class="reaction">
-      <h2>Simulasi Reaksi 🔬</h2>
-      <div id="na" class="atom na">Na</div>
-      <div id="cl" class="atom cl">Cl</div>
-      <div id="nacl" class="atom nacl">NaCl</div>
-      <br><br>
-      <button onclick="reaksi()">Mulai Reaksi</button>
-    </div>
+    <a href="index.html" class="back-btn">⬅ Kembali</a>
   </main>
 
-  <footer>
-    &copy; 2025 Blog 2. Semua hak cipta dilindungi.
-  </footer>
-
   <script>
-    function reaksi() {
-      document.getElementById("na").style.display = "none";
-      document.getElementById("cl").style.display = "none";
-      document.getElementById("nacl").classList.add("show");
+    function combine() {
+      document.getElementById("salt").style.display = "block";
     }
   </script>
-
 </body>
 </html>
