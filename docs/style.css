@@ -126,7 +126,9 @@ footer {
   padding: 10px;
 }
 main {
-  background: url("Batik.jpg") repeat center center;
+  background-image: url("Batik.jpg");
+  background-repeat: repeat;
+  background-position: center;
   background-size: cover;
   padding: 40px 0;
 }
