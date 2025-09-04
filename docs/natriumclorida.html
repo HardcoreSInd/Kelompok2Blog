@@ -331,7 +331,6 @@
       box-shadow: 0 0 8px gold;
     }
 
-    /* Timeline */
     .timeline {
       position: relative;
       max-width: 100%;
@@ -608,7 +607,7 @@
         <a href="#"><i class="fab fa-instagram"></i></a>
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
-      <p>&copy; 2025 ChemBlog. Semua hak cipta dilindungi.</p>
+      <p>&copy; 2025 P2Blog. Semua hak cipta dilindungi.</p>
     </div>
   </footer>
 
@@ -619,17 +618,14 @@
       const naclElement = document.querySelector('.nacl');
       const button = document.querySelector('.reaction-button');
       
-      // Add animation class to elements
       naElement.style.animation = 'moveTogether 2s forwards';
       clElement.style.animation = 'moveTogether 2s forwards';
       
-      // Show NaCl after animation completes
       setTimeout(() => {
         naElement.style.display = 'none';
         clElement.style.display = 'none';
         naclElement.classList.add('show');
         
-        // Change button to reset
         button.innerHTML = '<i class="fas fa-redo"></i> Ulangi Simulasi';
         button.onclick = resetReaction;
       }, 2000);
