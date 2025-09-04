@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url("batik.jpg") repeat;
+  background: url("Batik.jpg") repeat;
   background-size: cover;
   line-height: 1.6;
   color: #333;
@@ -126,7 +126,7 @@ footer {
   padding: 10px;
 }
 main {
-  background: url("batik.jpg") repeat center center;
+  background: url("Batik.jpg") repeat center center;
   background-size: cover;
   padding: 40px 0;
 }
