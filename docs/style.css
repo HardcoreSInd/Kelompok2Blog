@@ -132,3 +132,11 @@ main {
   background-size: cover;
   padding: 40px 0;
 }
+.KButton {
+background-color:cyan;
+font-weight:bold;
+color:black;
+border-radius:20px;
+}
+
+
