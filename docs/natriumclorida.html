@@ -33,7 +33,6 @@
       flex-direction: column;
     }
 
-    /* Header Styles */
     header {
       background: linear-gradient(90deg, var(--primary), var(--secondary));
       padding: 20px;
@@ -45,9 +44,13 @@
       position: relative;
     }
 
-    .nav-container {
+    .header-container {
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
+    }
+
+    .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -87,7 +90,6 @@
     }
 
     .header-content {
-      max-width: 1200px;
       margin: 30px auto;
       padding: 20px;
     }
@@ -106,12 +108,12 @@
       margin-right: auto;
     }
 
-    /* Main Content */
     main {
       flex: 1;
       max-width: 1200px;
       margin: 30px auto;
       padding: 0 20px;
+      width: 100%;
     }
 
     .content-grid {
@@ -124,6 +126,14 @@
     @media (max-width: 768px) {
       .content-grid {
         grid-template-columns: 1fr;
+      }
+      
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .header-content {
+        padding: 10px;
       }
     }
 
@@ -161,7 +171,6 @@
       margin-bottom: 8px;
     }
 
-    /* Reaction Section */
     .reaction {
       background: white;
       border-radius: 15px;
@@ -248,7 +257,6 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
 
-    /* Table Styles */
     .property-table {
       width: 100%;
       border-collapse: collapse;
@@ -270,7 +278,6 @@
       background-color: rgba(74, 137, 220, 0.05);
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 25px;
@@ -304,7 +311,6 @@
       color: var(--secondary);
     }
 
-    /* Animations */
     @keyframes moveTogether {
       0% { transform: translateX(0); }
       100% { transform: translateX(calc(var(--target-position) - 50px)); }
@@ -372,7 +378,6 @@
       color: var(--primary);
     }
 
-    /* Crystal Structure */
     .crystal-structure {
       display: flex;
       justify-content: center;
@@ -407,28 +412,43 @@
     .ion.cl {
       background: var(--cl-color);
     }
+    
+    /* Hero section */
+    .hero {
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .hero img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="nav-container">
-      <div class="logo">
-        <i class="fas fa-atom"></i>
-        <span>LiveBlog</span>
+    <div class="header-container">
+      <div class="nav-container">
+        <div class="logo">
+          <i class="fas fa-atom"></i>
+          <span>LiveBlog</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li><a href="artikel.html"><i class="fas fa-book"></i> Artikel</a></li>
+            <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a></li>
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
-          <li><a href="artikel.html"><i class="fas fa-book"></i> Artikel</a></li>
-          <li><a href="tentang.html"><i class="fas fa-info-circle"></i> Tentang</a></li>
-        </ul>
-      </nav>
-    </div>
-    
-    <div class="header-content">
-      <h1>Natrium Klorida (NaCl)</h1>
-      <p>Dari Duo Berbahaya Menjadi Garam Dapur yang Menyehatkan</p>
+
+      <div class="header-content">
+        <h1>Natrium Klorida (NaCl)</h1>
+        <p>Dari Duo Berbahaya Menjadi Garam Dapur yang Menyehatkan</p>
+      </div>
     </div>
   </header>
 
@@ -436,18 +456,20 @@
     <div class="content-grid">
       <div class="card">
         <h2>Apa Itu Natrium Klorida?</h2>
-        <p>Natrium klorida (NaCl), lebih dikenal sebagai garam dapur, adalah senyawa ionik yang terdiri dari unsur natrium (Na) dan klorin (Cl). Senyawa ini merupakan komponen utama dalam garam yang dikonsumsi sehari-hari dan memiliki peran vital dalam berbagai proses biologis.</p>
-          <section class="hero">
-      <h1>Table Periodik</h1>
-      <img src="table.png" alt="Foto profil" width="400">
-    </section> 
+        <p>Natrium klorida (NaCl), lebih dikenal sebagai garam dapur, adalah senyawa ionik yang terdiri dari unsur natrium (Na) dan klorin (Cl). Senyawa ini merupakan komponent utama dalam garam yang dikonsumsi sehari-hari dan memiliki peran vital dalam berbagai proses biologis.</p>
+        
+        <section class="hero">
+          <h3>Table Periodik</h3>
+          <img src="https://placehold.co/400x300?text=Tabel+Periodik" alt="Tabel Periodik" width="400">
+        </section> 
+        
         <h3>Sejarah Singkat</h3>
         <p>Garam telah menjadi komoditas berharga sejak zaman kuno. Peradaban Romawi bahkan membayar para prajurit mereka dengan garam (asal kata "salary"). Sepanjang sejarah, garam digunakan sebagai pengawet makanan dan mata uang pertukaran.</p>
       </div>
-      
+
       <div class="card">
         <h2>Sifat Fisik dan Kimia</h2>
-        
+
         <table class="property-table">
           <tr>
             <th>Sifat</th>
@@ -485,21 +507,21 @@
       <div class="card">
         <h2>Pembentukan NaCl</h2>
         <p>Natrium klorida terbentuk melalui reaksi kimia antara unsur natrium dan klorin. Kedua unsur ini sangat reaktif dan berbahaya dalam bentuk murninya:</p>
-        
+
         <h3>Natrium (Na)</h3>
         <p>Logam alkali yang sangat reaktif. Dalam keadaan murni, natrium adalah logam lunak keperakan yang bereaksi keras dengan air, menghasilkan hidrogen yang dapat meledak.</p>
-        
+
         <h3>Klorin (Cl₂)</h3>
         <p>Gas beracun berwarna hijau kekuningan yang bersifat korosif dan dapat mematikan jika terhirup. Digunakan sebagai senjata kimia selama Perang Dunia I.</p>
-        
+
         <h3>Proses Ikatan Ionik</h3>
         <p>Natrium melepaskan satu elektron dari kulit terluarnya, membentuk ion Na⁺. Klorin menerima elektron tersebut, membentuk ion Cl⁻. Daya tarik elektrostatis antara ion-ion yang berlawanan muatan ini menciptakan ikatan ionik yang kuat, menghasilkan senyawa NaCl yang stabil.</p>
       </div>
-      
+
       <div class="card">
         <h2>Struktur Kristal</h2>
         <p>NaCl membentuk struktur kristal kubus berpusat muka (face-centered cubic), di mana setiap ion natrium dikelilingi oleh enam ion klorida, dan sebaliknya.</p>
-        
+
         <div class="crystal-structure">
           <div class="crystal">
             <div class="ion na" style="top: 50px; left: 50px;">Na⁺</div>
@@ -510,7 +532,7 @@
             <div class="ion cl" style="top: 75px; left: 125px;">Cl⁻</div>
           </div>
         </div>
-        
+
         <p>Struktur ini sangat stabil dan menjelaskan mengapa NaCl memiliki titik leleh yang tinggi dan membentuk kristal kubus yang sempurna.</p>
       </div>
     </div>
@@ -527,7 +549,7 @@
           <li><strong>Pengolahan Air:</strong> Regenerasi resin penukar ion pada proses pelunakan air</li>
         </ul>
       </div>
-      
+
       <div class="card">
         <h2>Efek Kesehatan</h2>
         <p>Meskipun essential untuk kesehatan, konsumsi berlebihan NaCl dapat menyebabkan:</p>
@@ -544,7 +566,7 @@
     <div class="reaction">
       <h2><i class="fas fa-flask"></i> Simulasi Reaksi Pembentukan NaCl</h2>
       <p>Klik tombol di bawah untuk melihat bagaimana natrium dan klorin bereaksi membentuk natrium klorida:</p>
-      
+
       <div class="reaction-container">
         <div class="atom">
           <div class="atom-circle na">
@@ -553,18 +575,18 @@
           </div>
           <div class="atom-label">Natrium (Logam Reaktif)</div>
         </div>
-        
+
         <div class="reaction-arrow">+</div>
-        
+
         <div class="atom">
           <div class="atom-circle cl">
             Cl
           </div>
           <div class="atom-label">Klorin (Gas Beracun)</div>
         </div>
-        
+
         <div class="reaction-arrow">→</div>
-        
+
         <div class="atom">
           <div class="atom-circle nacl">
             NaCl
@@ -572,7 +594,7 @@
           <div class="atom-label">Natrium Klorida (Garam Dapur)</div>
         </div>
       </div>
-      
+
       <button class="reaction-button" onclick="startReaction()">
         <i class="fas fa-play"></i> Mulai Reaksi
       </button>
@@ -620,34 +642,32 @@
       const clElement = document.querySelector('.cl');
       const naclElement = document.querySelector('.nacl');
       const button = document.querySelector('.reaction-button');
-      
+
       naElement.style.animation = 'moveTogether 2s forwards';
       clElement.style.animation = 'moveTogether 2s forwards';
-      
+
       setTimeout(() => {
         naElement.style.display = 'none';
         clElement.style.display = 'none';
         naclElement.classList.add('show');
-        
+
         button.innerHTML = '<i class="fas fa-redo"></i> Ulangi Simulasi';
         button.onclick = resetReaction;
       }, 2000);
     }
-    
+
     function resetReaction() {
       const naElement = document.querySelector('.na');
       const clElement = document.querySelector('.cl');
       const naclElement = document.querySelector('.nacl');
       const button = document.querySelector('.reaction-button');
-      
-      // Reset elements
+
       naElement.style.display = 'flex';
       clElement.style.display = 'flex';
       naclElement.classList.remove('show');
       naElement.style.animation = '';
       clElement.style.animation = '';
-      
-      // Change button back to start
+
       button.innerHTML = '<i class="fas fa-play"></i> Mulai Reaksi';
       button.onclick = startReaction;
     }
