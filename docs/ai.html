@@ -145,21 +145,17 @@
         let chatHistory = [];
         let lastMessageTime = 0;
 
-        // DOM Elements
         const chatbox = document.getElementById('chatbox');
         const userInput = document.getElementById('userInput');
         const sendButton = document.getElementById('sendButton');
 
-        // Initialize with welcome message
         addBotMessage("Hello! I'm an AI assistant powered by Together AI. How can I help you today?");
 
-        // Event Listeners
         sendButton.addEventListener('click', sendMessage);
         userInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') sendMessage();
         });
 
-        // Message Functions
         function addUserMessage(message) {
             const messageDiv = document.createElement('div');
             messageDiv.className = 'user-message';
@@ -190,7 +186,6 @@
             if (typingDiv) typingDiv.remove();
         }
 
-        // Message Sending with Rate Limiting
         async function sendMessage() {
             const message = userInput.value.trim();
             if (!message) return;
@@ -198,7 +193,7 @@
             // Check rate limiting (1 request per 12 seconds)
             const now = Date.now();
             const timeSinceLastMessage = now - lastMessageTime;
-            const minDelay = 12000; // 12 seconds in milliseconds
+            const minDelay = 12000; 
 
             if (timeSinceLastMessage < minDelay) {
                 const remainingTime = Math.ceil((minDelay - timeSinceLastMessage) / 1000);
@@ -210,7 +205,6 @@
             addUserMessage(message);
             showTypingIndicator();
 
-            // Add to chat history
             chatHistory.push({ role: "user", content: message });
 
             try {
@@ -247,7 +241,6 @@
             }
         }
 
-        // Type message with controlled speed (1/12 of total time per character)
         function typeMessage(message, totalSeconds) {
             const characters = message.split('');
             const delay = (totalSeconds * 1000) / characters.length;
