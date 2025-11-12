@@ -1,1 +1,209 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentasi Software</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #38bdf8;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: white;
+      animation: fadeDown 1s ease;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+
+    .card.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 400px;
+      object-fit: cover;
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+
+    .card-content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .card-content h2 {
+      color: var(--accent);
+      font-size: 1.8em;
+      margin-top: 0;
+    }
+
+    .list {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .list li {
+      margin: 5px 0;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 40px 10px;
+      font-size: 0.9em;
+      border-top: 1px solid #334155;
+    }
+
+    /* Animasi */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .card img {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .card img {
+        border-radius: var(--radius) var(--radius) 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Presentasi Software Populer</h1>
+    <p>Menjelajahi 3 software penting beserta kelebihan dan kekurangannya</p>
+  </header>
+
+  <main>
+    <!-- Software 1 -->
+    <section class="card">
+      <img src="soft1.jpeg" alt="Windows 10">
+      <div class="card-content">
+        <h2>1. Windows 10</h2>
+        <p><b>Jenis:</b> Sistem Operasi</p>
+        <ul class="list">
+          <li><b>Kelebihan:</b> Mudah digunakan, kompatibel luas, banyak dukungan aplikasi dan game.</li>
+          <li><b>Kekurangan:</b> Berbayar, rawan virus, dan memerlukan spesifikasi tinggi.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Software 2 -->
+    <section class="card">
+      <img src="soft2.jpeg" alt="Blender">
+      <div class="card-content">
+        <h2>2. Blender</h2>
+        <p><b>Jenis:</b> Aplikasi Desain & Animasi 3D</p>
+        <ul class="list">
+          <li><b>Kelebihan:</b> Gratis, open source, fitur lengkap (modeling, animasi, rendering, editing).</li>
+          <li><b>Kekurangan:</b> Antarmuka kompleks, berat di PC spesifikasi rendah.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Software 3 -->
+    <section class="card">
+      <img src="soft3.jpeg" alt="Visual Studio Code">
+      <div class="card-content">
+        <h2>3. Visual Studio Code</h2>
+        <p><b>Jenis:</b> Software Pemrograman</p>
+        <ul class="list">
+          <li><b>Kelebihan:</b> Ringan, banyak ekstensi, mendukung banyak bahasa (JavaScript, Python, dsb).</li>
+          <li><b>Kekurangan:</b> Butuh ekstensi tambahan untuk fitur lengkap, bisa lambat jika banyak plugin aktif.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Dibuat oleh <b>hardcoresind</b> © 2025 — Untuk presentasi edukatif.
+  </footer>
+
+  <script>
+    // Animasi scroll (reveal)
+    const cards = document.querySelectorAll('.card');
+    window.addEventListener('scroll', checkCards);
+
+    function checkCards() {
+      const triggerBottom = window.innerHeight * 0.8;
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < triggerBottom) {
+          card.classList.add('show');
+        }
+      });
+    }
+
+    checkCards(); // jalankan di awal
+  </script>
+</body>
+</html>
