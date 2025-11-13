@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -49,6 +48,32 @@
       opacity: 0.9;
     }
 
+    /* Navigasi Kategori */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: #1e293b;
+      padding: 15px;
+      border-bottom: 2px solid #334155;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
+      text-shadow: 0 0 8px var(--accent);
+    }
+
     main {
       max-width: 1000px;
       margin: 60px auto;
@@ -56,6 +81,13 @@
       display: flex;
       flex-direction: column;
       gap: 80px;
+    }
+
+    .section-title {
+      font-size: 2em;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 20px;
     }
 
     .card {
@@ -80,6 +112,7 @@
       max-width: 400px;
       object-fit: cover;
       border-radius: var(--radius) 0 0 var(--radius);
+      animation: float 6s ease-in-out infinite;
     }
 
     .card-content {
@@ -88,9 +121,18 @@
     }
 
     .card-content h2 {
-      color: var(--accent);
-      font-size: 1.8em;
       margin-top: 0;
+    }
+
+    .card-content a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .card-content a:hover {
+      color: white;
+      text-shadow: 0 0 6px var(--accent);
     }
 
     .list {
@@ -121,10 +163,6 @@
       50% { transform: translateY(-10px); }
     }
 
-    .card img {
-      animation: float 6s ease-in-out infinite;
-    }
-
     /* Responsif */
     @media (max-width: 768px) {
       .card {
@@ -140,46 +178,61 @@
 <body>
   <header>
     <h1>Presentasi Software Populer</h1>
-    <p>Menjelajahi 3 software penting beserta kelebihan dan kekurangannya</p>
+    <p>Menjelajahi software dari berbagai kategori lengkap dengan kelebihan dan kekurangannya</p>
   </header>
 
+  <nav>
+    <a href="#os">Sistem Operasi</a>
+    <a href="#desain">Aplikasi Desain</a>
+    <a href="#pemrograman">Software Pemrograman</a>
+  </nav>
+
   <main>
-    <!-- Software 1 -->
-    <section class="card">
-      <img src="sof1.jpeg" alt="Windows">
-      <div class="card-content">
-        <h2>1. Windows 10</h2>
-        <p><b>Jenis:</b> Sistem Operasi</p>
-        <ul class="list">
-          <li><b>Kelebihan:</b> Mudah digunakan, kompatibel luas, banyak dukungan aplikasi dan game.</li>
-          <li><b>Kekurangan:</b> Berbayar, rawan virus, dan memerlukan spesifikasi tinggi.</li>
-        </ul>
+    <!-- Sistem Operasi -->
+    <section id="os">
+      <h2 class="section-title">Sistem Operasi</h2>
+      <div class="card">
+        <img src="soft1.jpeg" alt="Windows">
+        <div class="card-content">
+          <h2><a href="windows.html">1. Windows 10</a></h2>
+          <p><b>Jenis:</b> Sistem Operasi</p>
+          <ul class="list">
+            <li><b>Kelebihan:</b> Mudah digunakan, kompatibel luas, banyak dukungan aplikasi dan game.</li>
+            <li><b>Kekurangan:</b> Berbayar, rawan virus, dan memerlukan spesifikasi tinggi.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- Software 2 -->
-    <section class="card">
-      <img src="soft2.png" alt="Blender">
-      <div class="card-content">
-        <h2>2. Blender</h2>
-        <p><b>Jenis:</b> Aplikasi Desain & Animasi 3D</p>
-        <ul class="list">
-          <li><b>Kelebihan:</b> Gratis, open source, fitur lengkap (modeling, animasi, rendering, editing).</li>
-          <li><b>Kekurangan:</b> Antarmuka kompleks, berat di PC spesifikasi rendah.</li>
-        </ul>
+    <!-- Aplikasi Desain -->
+    <section id="desain">
+      <h2 class="section-title">Aplikasi Desain & Animasi</h2>
+      <div class="card">
+        <img src="soft2.png" alt="Blender">
+        <div class="card-content">
+          <h2><a href="blender.html">2. Blender</a></h2>
+          <p><b>Jenis:</b> Aplikasi Desain & Animasi 3D</p>
+          <ul class="list">
+            <li><b>Kelebihan:</b> Gratis, open source, fitur lengkap (modeling, animasi, rendering, editing).</li>
+            <li><b>Kekurangan:</b> Antarmuka kompleks, berat di PC spesifikasi rendah.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- Software 3 -->
-    <section class="card">
-      <img src="soft3.png" alt="Visual Studio Code">
-      <div class="card-content">
-        <h2>3. Visual Studio Code</h2>
-        <p><b>Jenis:</b> Software Pemrograman</p>
-        <ul class="list">
-          <li><b>Kelebihan:</b> Ringan, banyak ekstensi, mendukung banyak bahasa (JavaScript, Python, dsb).</li>
-          <li><b>Kekurangan:</b> Butuh ekstensi tambahan untuk fitur lengkap, bisa lambat jika banyak plugin aktif.</li>
-        </ul>
+    <!-- Software Pemrograman -->
+    <section id="pemrograman">
+      <h2 class="section-title">Software Pemrograman</h2>
+      <div class="card">
+        <img src="soft3.png" alt="Visual Studio Code">
+        <div class="card-content">
+          <h2><a href="vscode.html">3. Visual Studio Code</a></h2>
+          <p><b>Jenis:</b> Software Pemrograman</p>
+          <ul class="list">
+            <li><b>Kelebihan:</b> Ringan, banyak ekstensi, mendukung banyak bahasa (JavaScript, Python, dsb).</li>
+            <li><b>Kekurangan:</b> Butuh ekstensi tambahan untuk fitur lengkap, bisa lambat jika banyak plugin aktif.</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
@@ -189,7 +242,7 @@
   </footer>
 
   <script>
-    // Animasi scroll (reveal)
+    // Efek muncul saat di-scroll
     const cards = document.querySelectorAll('.card');
     window.addEventListener('scroll', checkCards);
 
@@ -203,7 +256,7 @@
       });
     }
 
-    checkCards(); // jalankan di awal
+    checkCards(); // Jalankan di awal
   </script>
 </body>
 </html>
