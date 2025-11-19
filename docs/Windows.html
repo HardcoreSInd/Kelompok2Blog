@@ -43,43 +43,12 @@
       margin-bottom: 10px;
     }
 
-    header p {
-      font-size: 1.1em;
-      opacity: 0.9;
-    }
-
-    /* Navigasi Kategori */
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      background: #1e293b;
-      padding: 15px;
-      border-bottom: 2px solid #334155;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: white;
-      text-shadow: 0 0 8px var(--accent);
-    }
-    .navbar {
       display: flex;
       justify-content: center;
       gap: 15px;
       margin-top: 15px;
       padding: 10px 0;
-      background: transparent;
     }
 
     .nav-button {
@@ -119,52 +88,20 @@
       background: var(--card);
       border-radius: var(--radius);
       overflow: hidden;
+      padding: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-      transform: translateY(40px);
-      opacity: 0;
-      transition: all 0.8s ease;
-    }
-
-    .card.show {
-      transform: translateY(0);
-      opacity: 1;
     }
 
     .card img {
       width: 100%;
-      max-width: 400px;
+      max-width: 350px;
       object-fit: cover;
-      border-radius: var(--radius) 0 0 var(--radius);
-      animation: float 6s ease-in-out infinite;
+      border-radius: var(--radius);
+      margin-right: 20px;
     }
 
     .card-content {
       flex: 1;
-      padding: 30px;
-    }
-
-    .card-content h2 {
-      margin-top: 0;
-    }
-
-    .card-content a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .card-content a:hover {
-      color: white;
-      text-shadow: 0 0 6px var(--accent);
-    }
-
-    .list {
-      margin: 10px 0;
-      padding-left: 20px;
-    }
-
-    .list li {
-      margin: 5px 0;
     }
 
     footer {
@@ -175,112 +112,99 @@
       border-top: 1px solid #334155;
     }
 
-    /* Animasi */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* Responsif */
     @media (max-width: 768px) {
       .card {
         flex-direction: column;
         text-align: center;
       }
       .card img {
-        border-radius: var(--radius) var(--radius) 0 0;
+        margin: 0 auto 20px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Windows 10 </h1>
-    <nav class="navbar">
+    <h1>Windows 10</h1>
+    <nav>
       <a href="sof.html" class="nav-button">Back</a>
-</nav>
-</header>
+    </nav>
+  </header>
+
 <main>
-  <section id="intro">
+  <section>
     <h2 class="section-title">Sejarah Windows 10</h2>
     <div class="card">
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_10_Logo.svg" alt="Windows 10">
       <div class="card-content">
-        <h2>Awal Berdirinya</h2>
+        <h3>Awal Berdirinya</h3>
         <p>
-          Windows 10 resmi dirilis pada <strong>29 Juli 2015</strong> oleh <strong>Microsoft</strong>. 
-          Sistem operasi ini dikembangkan sebagai penerus Windows 8.1 dan dirancang sebagai platform universal
-          yang bekerja pada berbagai perangkat seperti komputer, laptop, tablet, bahkan Xbox.
+          Windows 10 resmi dirilis pada <strong>29 Juli 2015</strong> oleh <strong>Microsoft</strong>.
+          Sistem operasi ini dikembangkan sebagai penerus Windows 8.1 dengan tujuan menghadirkan tampilan
+          modern, kecepatan lebih baik, dan kompatibilitas lintas perangkat seperti komputer, laptop,
+          tablet, hingga konsol Xbox.
         </p>
         <p>
-          Proyek Windows 10 awalnya dikenal sebagai <strong>"Threshold"</strong> dalam tahap pengembangan sebelum dirilis ke publik.
+          Sebelum dirilis secara publik, Windows 10 memiliki nama kode pengembangan yaitu 
+          <strong>"Threshold"</strong>.
         </p>
       </div>
     </div>
   </section>
 
-  <section id="creator">
-    <h2 class="section-title">Diciptakan Oleh Siapa?</h2>
+  <section>
+    <h2 class="section-title">Pencipta Windows 10</h2>
     <div class="card">
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
       <div class="card-content">
-        <h2>Microsoft Corporation</h2>
+        <h3>Microsoft Corporation</h3>
         <p>
-          Windows 10 diciptakan oleh Microsoft dengan pimpinan pengembangan oleh <strong>Terry Myerson</strong> 
-          yang saat itu menjabat sebagai kepala divisi sistem operasi Microsoft.
-        </p>
-        <p>
-          Pendiri Microsoft sendiri adalah <strong>Bill Gates</strong> dan <strong>Paul Allen</strong>.
+          Windows 10 dibuat oleh Microsoft di bawah pimpinan <strong>Terry Myerson</strong>, yang saat itu 
+          memimpin divisi sistem operasi Microsoft. Perusahaan ini sendiri didirikan oleh 
+          <strong>Bill Gates</strong> dan <strong>Paul Allen</strong>.
         </p>
       </div>
     </div>
   </section>
 
-  <section id="features">
+  <section>
     <h2 class="section-title">Fungsi dan Kegunaan</h2>
     <div class="card">
       <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png" alt="Features">
       <div class="card-content">
-        <h2>Kegunaan Windows 10</h2>
-        <ul class="list">
-          <li>Sebagai sistem operasi untuk menjalankan aplikasi dan perangkat keras.</li>
-          <li>Mendukung gaming modern dengan fitur DirectX 12.</li>
-          <li>Menghubungkan pengguna dengan layanan cloud Microsoft seperti OneDrive.</li>
-          <li>Digunakan untuk pekerjaan, sekolah, desain, coding, dan multimedia.</li>
-        </ul>
+        <p>
+          Windows 10 berfungsi sebagai sistem operasi yang digunakan untuk menjalankan berbagai aplikasi 
+          dan menghubungkan perangkat keras dengan pengguna. Sistem ini banyak digunakan untuk pekerjaan,
+          sekolah, editing, programming, multimedia, serta mendukung gaming modern dengan teknologi 
+          <strong>DirectX 12</strong>.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="weakness">
+  <section>
     <h2 class="section-title">Kelebihan & Kekurangan</h2>
     <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/179/179386.png" alt="Pros and Cons">
+      <img src="https://cdn-icons-png.flaticon.com/512/179/179386.png" alt="Pros Cons">
       <div class="card-content">
-        <h2>Kelebihan Windows 10</h2>
-        <ul class="list">
-          <li>Tampilan modern dan mudah digunakan.</li>
-          <li>Kompatibel dengan banyak software dan hardware.</li>
-          <li>Pembaruan keamanan rutin.</li>
-          <li>Mendukung teknologi gaming modern.</li>
-        </ul>
+        <h3>Kelebihan</h3>
+        <p>
+          Windows 10 memiliki tampilan modern dan mudah digunakan, kompatibel dengan banyak software dan perangkat keras, 
+          mendapatkan pembaruan keamanan secara rutin, dan mendukung teknologi gaming terbaru.
+        </p>
 
-        <h2 style="margin-top:20px;">Kekurangan Windows 10</h2>
-        <ul class="list">
-          <li>Sering melakukan update otomatis yang memakan waktu.</li>
-          <li>Memerlukan spesifikasi perangkat yang cukup tinggi untuk performa optimal.</li>
-          <li>Privasi data sering dipertanyakan karena sistem telemetry Microsoft.</li>
-        </ul>
+        <h3>Kekurangan</h3>
+        <p>
+          Windows 10 sering melakukan update otomatis yang kadang mengganggu, membutuhkan spesifikasi perangkat yang cukup tinggi,
+          dan memiliki isu privasi karena fitur telemetry yang mengumpulkan data pengguna.
+        </p>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <p>© 2025 <b>Lifeblog</b> .</p>
+  <p>© 2025 <strong>Lifeblog</strong></p>
 </footer>
+</body>
+</html>
