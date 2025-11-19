@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentasi Software</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #38bdf8;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+      padding: 10px 0;
+    }
+
+    .nav-button {
+      padding: 10px 25px;
+      background-color: #ff7e5f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background-color: #feb47b;
+      transform: scale(1.05);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    .section-title {
+      font-size: 2em;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 350px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-right: 20px;
+    }
+
+    .card-content {
+      flex: 1;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 40px 10px;
+      font-size: 0.9em;
+      border-top: 1px solid #334155;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .card img {
+        margin: 0 auto 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Linux</h1>
+    <nav>
+      <a href="sof.html" class="nav-button">Back</a>
+    </nav>
+  </header>
+
+<main>
+  <section>
+    <h2 class="section-title">Sejarah Linux</h2>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux Logo">
+      <div class="card-content">
+        <h3>Awal Rilis</h3>
+        <p>
+          Linux pertama kali dirilis pada <strong>17 September 1991</strong> oleh 
+          seorang mahasiswa asal Finlandia bernama <strong>Linus Torvalds</strong>.
+          Awalnya Linux hanyalah kernel eksperimen, namun berkembang menjadi salah satu sistem operasi paling populer di dunia.
+        </p>
+        <p>
+          Linux dibuat dengan konsep <strong>open-source</strong>, di mana siapa pun dapat
+          memodifikasi, membagikan, dan mengembangkan sistem ini secara bebas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Pengembang</h2>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux">
+      <div class="card-content">
+        <h3>Linus Torvalds & Komunitas Dunia</h3>
+        <p>
+          Linux dikembangkan oleh komunitas global developer melalui kolaborasi terbuka.
+          Kernel Linux dikelola oleh <strong>Linus Torvalds</strong>, namun distribusi Linux
+          dibuat oleh berbagai organisasi seperti Ubuntu, Debian, Arch Linux, Fedora, dll.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Fungsi dan Kegunaan</h2>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png" alt="Functions">
+      <div class="card-content">
+        <p>
+          Linux digunakan untuk berbagai keperluan seperti server, cloud computing, cybersecurity, IoT, hacking etis,
+          hingga penggunaan umum di laptop dan PC. Linux terkenal stabil, aman, ringan, dan fleksibel sehingga banyak 
+          digunakan oleh perusahaan besar seperti Google, NASA, Facebook, Tesla, dan Amazon.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Kelebihan & Kekurangan</h2>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/179/179386.png" alt="Pros Cons">
+      <div class="card-content">
+        <h3>Kelebihan</h3>
+        <p>
+          Linux gratis, open-source, sangat aman dari virus, stabil untuk server,
+          ringan untuk perangkat lama, dan dapat dikustomisasi sepenuhnya.
+        </p>
+
+        <h3>Kekurangan</h3>
+        <p>
+          Beberapa aplikasi Windows tidak tersedia secara native, perlu adaptasi
+          untuk pengguna baru, dan beberapa game atau software profesional memerlukan
+          konfigurasi tambahan seperti Wine atau Proton.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 <strong>Lifeblog</strong></p>
+</footer>
+</body>
+</html>
