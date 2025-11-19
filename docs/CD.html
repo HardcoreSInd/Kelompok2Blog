@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Presentasi Software</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #38bdf8;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+      padding: 10px 0;
+    }
+
+    .nav-button {
+      padding: 10px 25px;
+      background-color: #ff7e5f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background-color: #feb47b;
+      transform: scale(1.05);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    .section-title {
+      font-size: 2em;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 350px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-right: 20px;
+    }
+
+    .card-content {
+      flex: 1;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 40px 10px;
+      font-size: 0.9em;
+      border-top: 1px solid #334155;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .card img {
+        margin: 0 auto 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CorelDRAW</h1>
+    <nav>
+      <a href="sof.html" class="nav-button">Back</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">Sejarah CorelDRAW</h2>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/CorelDRAW_logo.png" alt="CorelDRAW Logo" />
+        <div class="card-content">
+          <h3>Awal Perkembangan</h3>
+          <p>
+            CorelDRAW pertama kali diperkenalkan pada <strong>1989</strong> sebagai bagian dari
+            paket perangkat lunak grafis milik <strong>Corel Corporation</strong>. Program ini dikembangkan
+            untuk menjadi aplikasi desain vektor yang kuat dan ramah pengguna, terutama untuk kebutuhan
+            percetakan dan ilustrasi grafis.
+          </p>
+          <p>
+            Sejak versi-versi awalnya, CorelDRAW berkembang pesat dan menjadi salah satu pesaing utama
+            di bidang aplikasi desain vektor, terutama pada platform Windows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Pencipta dan Organisasi</h2>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Corel Corporation" />
+        <div class="card-content">
+          <h3>Corel Corporation</h3>
+          <p>
+            CorelDRAW dikembangkan oleh <strong>Corel Corporation</strong>, perusahaan perangkat lunak asal
+            Kanada yang didirikan oleh <strong>Michael Cowpland</strong>. Corel memfokuskan diri pada solusi
+            grafis, multimedia, dan produktivitas, dan CorelDRAW menjadi salah satu produk andalannya.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Fungsi dan Kegunaan</h2>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910794.png" alt="Design Tools" />
+        <div class="card-content">
+          <p>
+            CorelDRAW adalah aplikasi desain grafis berbasis vektor yang umum digunakan untuk membuat logo,
+            ilustrasi, materi promosi, layout brosur, desain kemasan, dan artwork untuk percetakan. CorelDRAW
+            juga menyediakan fitur untuk mengatur tipografi, warna, dan ekspor ke berbagai format file industri.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Kelebihan & Kekurangan</h2>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/179/179386.png" alt="Pros Cons" />
+        <div class="card-content">
+          <h3>Kelebihan</h3>
+          <p>
+            CorelDRAW menawarkan alat desain vektor yang lengkap dan intuitif, dukungan kuat untuk workflow percetakan,
+            kemampuan impor/ekspor ke banyak format, serta fitur layout yang memudahkan pembuatan materi cetak.
+            Untuk pengguna Windows, CorelDRAW sering dianggap cepat dan efisien.
+          </p>
+
+          <h3>Kekurangan</h3>
+          <p>
+            CorelDRAW cenderung lebih fokus pada platform Windows (meskipun ada versi lain), menggunakan lisensi berbayar,
+            dan beberapa studio atau industri kreatif mungkin lebih memilih Adobe Illustrator karena ekosistem dan
+            standar industri yang lebih luas. Selain itu, beberapa fitur lanjutan mungkin memerlukan waktu belajar.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 <strong>Lifeblog</strong></p>
+  </footer>
+</body>
+</html>
